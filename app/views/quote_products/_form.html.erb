@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :product %>
-    <%= form.select :product, QuoteProduct.products.keys.map{|p| p=="blank_blue_ray_disk"? "Blank Blue-Ray disk" : [p.try(:humanize), p] }, include_blank: true %>
+    <%= form.select :product, QuoteProduct.products.keys.map{|p| [p.humanize, p] }, include_blank: true %>
   </div>
 
   <div class="field">
