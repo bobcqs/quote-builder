@@ -2,13 +2,13 @@ class QuoteProduct < ApplicationRecord
   belongs_to :quote
 
   #UPDATE to correct price
-  enum product: { "book" => 0.5, "face_mask" => 1, "first_aid_kit" => 10, "blank_blue-ray_disk" => 5 }
+  enum product: { "book" => 0.5, "face_mask" => 1, "first_aid_kit" => 10, "blank_blue_ray_disk" => 5 }
 
   validates :product, :amount, presence: true
   validates :amount, inclusion: (1..9999)
 
   def cost
-    tax_free_cost + tax + import_duty
+      tax_free_cost + tax + import_duty + special_tax
   end
 
   def tax_free_cost
@@ -32,6 +32,14 @@ class QuoteProduct < ApplicationRecord
   def import_duty
     if book? || face_mask?
       tax_free_cost * 0.05
+    else
+      0
+    end
+  end
+
+  def special_tax
+    if blank_blue_ray_disk?
+      tax_free_cost * 0.02
     else
       0
     end
