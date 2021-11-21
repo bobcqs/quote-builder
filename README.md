@@ -39,9 +39,9 @@ This application allows Sales People to build quotes of office supplies.
 1. Install all dependencies in the Gemfile are available to the Ruby project:
     `bundle install`
 
-2. Creates the database for the current RAILS_ENV environment, runs migrations for the current environment that have not run yet:
+2. Runs migrations for the current environment that have not run yet:
 
-    `rake db:create db:migrate`
+    `rake db:migrate`
 
 3. Start Rails server:
 
@@ -53,7 +53,7 @@ This application allows Sales People to build quotes of office supplies.
 4. Stop the server:
     `ctrl + c`
 
-### Run tests
+### Run Rspec tests
 
 1. Run all tests of the project(RSpec):
     `rspec spec`
@@ -61,18 +61,32 @@ This application allows Sales People to build quotes of office supplies.
 2. Run specific tests of the project(RSpec):
     `rspec [spec-file-path]`
 
+### Run Cypress Test
+
+1. Start Rails server:
+    `bin/rails s`
+
+2. Open a new terminal:
+    ```shell
+    cd e2e
+    yarn install 
+    yarn cypress open 
+    ```
+
 ## III. Notes
 
 ### Update
-1. Add the product for Blue-Ray disk
+1. Update product type in database from integer to decimal 
 
-2. Add testing for quote_decorator, quote_product_decorator, quote
+2. Add the product for Blue-Ray disk
 
-3. Refractor the method for quote calculaton
+3. Add testing for quote_decorator, quote_product_decorator, quote
 
-4. Setup the Cypress Test
+4. Refractor the method for quote calculaton
 
-5. Add RSpec testing for decorator
+5. Add/Fixed RSpec testing for decorator
+
+6. Setup the Cypress Test
 
 ### Good about the previous code
 1. Clear file structure and formatting which is easy to access
