@@ -1,10 +1,10 @@
 # Ready Coding Exercise - Quote Builder
 
-## Description
+## I. Description
 
 This application allows Sales People to build quotes of office supplies.
 
-## Start up guide
+## II. Start up guide
 
 ### Prerequisites
 
@@ -61,7 +61,7 @@ This application allows Sales People to build quotes of office supplies.
 2. Run specific tests of the project(RSpec):
     `rspec [spec-file-path]`
 
-## Notes
+## III. Notes
 
 ### Update
 1. Add the product for Blue-Ray disk
