@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root to: redirect('/quotes')
 
   resources :quotes do
-    resources :products, controller: 'quote_products', only: [:new, :create, :destroy]
+    resources :products, controller: 'quote_products', only: %i[new create destroy]
   end
 end
+
+

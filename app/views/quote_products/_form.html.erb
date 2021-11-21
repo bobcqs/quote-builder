@@ -1,7 +1,7 @@
 <%= form_with(model: quote_product) do |form| %>
   <% if quote_product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(quote_product.errors.count, "error") %> prohibited this quote_product from being saved:</h2>
+      <h2><%= pluralize(quote_product.errors.count, "error") %> : the amount of quote product should in range of 1-9999</h2>
 
       <ul>
         <% quote_product.errors.each do |error| %>
