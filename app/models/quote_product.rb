@@ -2,7 +2,7 @@ class QuoteProduct < ApplicationRecord
   belongs_to :quote
 
   #UPDATE to correct price
-  enum product: { "book" => 0.5, "face_mask" => 1, "first_aid_kit" => 10, "blank_blue_ray_disk" => 5 }
+  enum product: { "book" => 0.5, "face_mask" => 1, "first_aid_kit" => 10, "blank_blue_ray_disk" => 2 }
 
   validates :product, :amount, presence: true
   validates :amount, inclusion: (1..9999)
