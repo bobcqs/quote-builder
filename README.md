@@ -1,68 +1,84 @@
-# README
+# Ready Coding Exercise - Quote Builder
 
-Coding exercise application to Demostrate:
-* Reading and understanding existing code
-* Refactoring code for an upcoming feature change
-* Adding the additional feature
-
-# Product Description
+## Description
 
 This application allows Sales People to build quotes of office supplies.
 
-# Current Products
+## Start up guide
 
-Book            | $0.5 per item
+### Prerequisites
 
-Face masks      | $1 per item
+- RVM
+- Ruby 2.7.1p83
+- Rails 6.1.0+ 
 
-First aid kits  | $10 per item
+### Installation
 
-There is 10% tax rate on Books
-There is a 5% import duty on Books and Face masks
+1. Clone the project: 
 
-# Your Tasks
+   `git clone https://github.com/bobcqs/quote-builde.git`
 
-## 1. Reading and understanding existing code
+2. Enter the project folder: 
 
-Get the application up and running.
-Make notes on what you find good and bad about the code.
-Please return your notes with the coding exercise.
+   `cd quote_builder`
 
-## 2. Refactor and adding a new product
+3. Install project dependencies: 
 
-Add a new product of "Blank Blue-Ray Disks" with the following specifications:
+   - Install RVM with ruby and rails: https://rvm.io/rvm/install
+   - Install specific ruby version: https://rvm.io/rubies/installing
 
-* $2 per item
-* Special tax rate of %2 
-* no import duty
+4. Check current dependencies version
 
-Your work will be evaluated to our internal coding standards, including criteria such as:
-1. Class, method, and variable names
-2. Top-down decomposition of algorithms
-3. Best practice code layout
-4. Effective file organisation
-5. Correct exception handling
-6. Good unit test cases
-7. Object Orientation
+   `rvm -v`
+   `ruby -v`
+   `rails -v`
 
-## 3. All done
 
-Please zip up your code and comments then email back.
+### Running instruction
 
-# Setup and play with Cypress Test (Optional)
+1. Install all dependencies in the Gemfile are available to the Ruby project:
+    `bundle install`
 
-If you would like to see what we use for end to end testing you can attempt to get it running.
+2. Creates the database for the current RAILS_ENV environment, runs migrations for the current environment that have not run yet:
 
-first start the rails server and leave it running
+    `rake db:create db:migrate`
 
-```shell
-bin/rails s
-```
+3. Start Rails server:
 
-in a new terminal
+    `rails s`
 
-```shell
-cd e2e
-yarn install # this will take a good few minutes
-yarn cypress open # then click "run 1 integration test"
-```
+    If need start server in specifc port
+    `rails s -p [port-number] -b [ip-address]`
+    
+4. Stop the server:
+    `ctrl + c`
+
+### Run tests
+
+1. Run all tests of the project(RSpec):
+    `rspec spec`
+
+2. Run specific tests of the project(RSpec):
+    `rspec [spec-file-path]`
+
+## Notes
+
+### Update
+1. Add the product for Blue-Ray disk
+2. Add testing for quote_decorator, quote_product_decorator, quote
+3. Refractor the method for quote calculaton
+4. Setup the Cypress Test
+
+### Good about the previous code
+1. Clear file structure and formatting which is easy to access
+2. Testing file structure and name matches with the app files
+3. Each function only solves one business problem, whicch make the application be easy to expand the function and maintain in the future
+4. The naming of functions is simple and easy to understand
+5. Consistent coding style
+
+### Bad about the previous code
+1. Algorthim can be update can be further optimised if it contains more product type
+2. Using the hardcode to return the price value instead of getting variable data
+3. When the product amount is 1, it still shows the pluralize format
+4. Logic error for calculating the import duty
+5. Does not keep only two decimal to display the price
