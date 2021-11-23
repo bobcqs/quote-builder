@@ -93,7 +93,7 @@ This application allows Sales People to build quotes of office supplies.
 
 2. Testing file structure and name matches with the app files
 
-3. Each function only solves one business problem, whicch make the application be easy to expand the function and maintain in the future
+3. Each function only solves one business problem, which make the application be easy to expand the function and maintain in the future
 
 4. The naming of functions is simple and easy to understand
 
